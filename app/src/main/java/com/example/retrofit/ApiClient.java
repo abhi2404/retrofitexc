@@ -1,5 +1,4 @@
 package com.example.retrofit;
-
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Retrofit;
@@ -14,9 +13,9 @@ public class ApiClient {
 
         OkHttpClient okHttpClient =new OkHttpClient.Builder().addInterceptor(httpLoggingInterceptor).build();
 
-        Retrofit retrofit= new Retrofit.Builder()
+        Retrofit retrofit = new Retrofit.Builder()
                 .addConverterFactory(GsonConverterFactory.create())
-                .baseUrl(" https://1ae413b3384c.ngrok.io")
+                .baseUrl("  https://c3e60a24d2e5.ngrok.io ")
                 .client(okHttpClient)
                 .build();
 
@@ -24,8 +23,7 @@ public class ApiClient {
     }
 
     public static UserService getUserService(){
-        UserService userService= getRetrofit().create(UserService.class);
-
+        UserService userService = getRetrofit().create(UserService.class);
         return userService;
     }
 }

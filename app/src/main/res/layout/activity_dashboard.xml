@@ -4,13 +4,152 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".DashboardActivity">
+    tools:context=".DashboardActivity"
+    android:background="#FDF4F4F4">
 
 
     <TextView
+        android:layout_marginTop="10dp"
         android:id="@+id/username"
+        android:paddingLeft="20dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Welcome username"
-        android:textSize="18sp"/>
+        android:text="Welcome Abhishek Singh!"
+        android:textStyle="bold"
+        android:textSize="24sp"
+        android:textColor="#504F4F" />
+
+    <TextView
+        android:paddingLeft="15dp"
+        android:layout_marginTop="40dp"
+        android:layout_below="@+id/username"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Email"
+        android:textStyle="bold"
+        android:textSize="17sp"
+        android:id="@+id/e"> </TextView>
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="10dp"
+        android:layout_below="@+id/e"
+        android:id="@+id/card1">
+    <TextView
+        android:layout_width="match_parent"
+        android:background="@drawable/edit_txt"
+        android:layout_height="wrap_content"
+        android:text="abhi123@gmail.com"
+        android:paddingLeft="7dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="7dp"
+        android:textSize="18sp"
+        android:id="@+id/email"/>
+
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:paddingLeft="15dp"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/card1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Doctor Degree"
+        android:textStyle="bold"
+        android:textSize="17sp"
+        android:id="@+id/d"> </TextView>
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="10dp"
+        android:id="@+id/card2"
+        android:layout_below="@+id/d">
+        <TextView
+            android:layout_width="match_parent"
+            android:background="@drawable/edit_txt"
+            android:layout_height="wrap_content"
+            android:text="M.B.B.S"
+            android:paddingLeft="7dp"
+            android:paddingTop="10dp"
+            android:textSize="18sp"
+            android:paddingBottom="7dp"/>
+
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:paddingLeft="15dp"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/card2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Field"
+        android:textStyle="bold"
+        android:textSize="17sp"
+        android:id="@+id/f"> </TextView>
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="10dp"
+        android:padding="20dp"
+        android:id="@+id/card3"
+        android:layout_below="@+id/f">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Physician"
+            android:background="@drawable/edit_txt"
+            android:paddingLeft="7dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="7dp"
+            android:textSize="18sp"/>
+
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:paddingLeft="15dp"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/card3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Mobile no"
+        android:textStyle="bold"
+        android:textSize="17sp"
+        android:id="@+id/m"> </TextView>
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="10dp"
+        android:padding="20dp"
+        android:id="@+id/card4"
+        android:layout_below="@+id/m"
+        >
+        <TextView
+            android:layout_width="match_parent"
+            android:background="@drawable/edit_txt"
+            android:layout_height="wrap_content"
+            android:text="12345678"
+            android:paddingLeft="7dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="7dp"
+            android:textSize="18sp"/>
+
+    </androidx.cardview.widget.CardView>
+
+    <Button
+        android:id="@+id/btn_logout"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/pass"
+        android:layout_marginTop="500dp"
+        android:background="@drawable/verify"
+        android:clickable="true"
+        android:focusable="true"
+        android:padding="10dp"
+        android:text="LogOut"
+        android:textColor="#fff"
+        android:textSize="20sp" />
+
+
+
 </RelativeLayout>
