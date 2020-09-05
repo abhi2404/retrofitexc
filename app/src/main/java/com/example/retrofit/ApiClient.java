@@ -1,5 +1,14 @@
 package com.example.retrofit;
+import android.util.Log;
+
+import org.jetbrains.annotations.NotNull;
+
+import java.io.IOException;
+
+import okhttp3.Interceptor;
 import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.Response;
 import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
@@ -8,17 +17,26 @@ public class ApiClient {
 
     private static Retrofit getRetrofit(){
 
-        HttpLoggingInterceptor httpLoggingInterceptor=new HttpLoggingInterceptor();
-        httpLoggingInterceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
+        OkHttpClient.Builder okHttpBuilder =new OkHttpClient.Builder();
 
-        OkHttpClient okHttpClient =new OkHttpClient.Builder().addInterceptor(httpLoggingInterceptor).build();
+        okHttpBuilder.addInterceptor(new Interceptor() {
+            @NotNull
+            @Override
+            public Response intercept(@NotNull Chain chain) throws IOException {
 
-        Retrofit retrofit = new Retrofit.Builder()
+                Request request=chain.request();
+                Request.Builder newRequest =request.newBuilder().header("Authorization","secret-Key");
+                Log.v("okhttp","adding header:"+newRequest);
+                return chain.proceed(newRequest.build());
+            }
+        });
+
+        Retrofit.Builder builder = new Retrofit.Builder()
                 .addConverterFactory(GsonConverterFactory.create())
-                .baseUrl("  https://c3e60a24d2e5.ngrok.io ")
-                .client(okHttpClient)
-                .build();
+                .baseUrl("    https://6a24a9813e0e.ngrok.io ")
+                .client(okHttpBuilder.build());
 
+        Retrofit retrofit=builder.build();
         return retrofit;
     }
 
